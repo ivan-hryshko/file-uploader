@@ -12,17 +12,17 @@ export class GoogleService {
   private readonly logger = new Logger(GoogleService.name);
 
   constructor(private readonly configService: ConfigService) {
-    // const auth = new google.auth.GoogleAuth({
-    //   keyFile: 'google-apikey.json',
-    //   // keyFile: {},
-    //   scopes: ['https://www.googleapis.com/auth/drive.file'],
-    // });
-    const auth = new google.auth.JWT({
-    projectId: this.configService.googleCloudProjectId,
-    email: this.configService.googleCloudClientEmail,
-    key: this.configService.googleCloudPrivateKey?.replace(/\\n/g, '\n'),
-    // scopes: ['https://www.googleapis.com/auth/drive.file'],
+    const auth = new google.auth.GoogleAuth({
+      keyFile: 'google-apikey.json',
+      // keyFile: {},
+      scopes: ['https://www.googleapis.com/auth/drive.file'],
     });
+    // const auth = new google.auth.JWT({
+    //   projectId: this.configService.googleCloudProjectId,
+    //   email: this.configService.googleCloudClientEmail,
+    //   key: this.configService.googleCloudPrivateKey?.replace(/\\n/g, '\n'),
+    // // scopes: ['https://www.googleapis.com/auth/drive.file'],
+    // });
     this.drive = google.drive({ version: 'v3', auth });
   }
 
