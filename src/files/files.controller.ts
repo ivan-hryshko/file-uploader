@@ -11,8 +11,7 @@ export class FilesController {
 
   @Post('upload')
   async uploadFiles(@Body() uploadFilesDto: UploadFilesDto) {
-    console.log('uploadFilesDto :>> ', uploadFilesDto);
-    return { data: uploadFilesDto }
-    // return this.filesService.uploadFiles(uploadFilesDto.urls);
+    const uploadedFiles = await this.filesService.uploadFiles(uploadFilesDto.urls);
+    return { data: uploadedFiles }
   }
 }

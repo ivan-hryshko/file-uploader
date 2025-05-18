@@ -6,13 +6,16 @@ export class FileEntity {
   id: number;
 
   @Column()
-  originalName: string;
+  originalUrl: string;
 
-  @Column()
+  @Column({ nullable: true })
   googleDriveId: string;
 
-  @Column()
+  @Column({ nullable: true })
   googleDriveUrl: string;
+
+  @Column()
+  status: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
