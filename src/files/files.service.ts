@@ -9,7 +9,7 @@ import { isURL } from 'class-validator';
 @Injectable()
 export class FilesService {
   constructor(
-    @InjectRepository(File) private repo: Repository<File>,
+    // @InjectRepository(File) private repo: Repository<File>,
     // private readonly googleService: GoogleService,
   ) {}
 
@@ -42,6 +42,6 @@ export class FilesService {
   }
 
   getFiles() {
-    return this.repo.find();
+    // return this.repo.find();
   }
 }

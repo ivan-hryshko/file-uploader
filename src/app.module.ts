@@ -6,7 +6,7 @@ import { ConfigModule } from './config/config.module';
 import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [FilesModule, ConfigModule, DatabaseModule],
+  imports: [ConfigModule, DatabaseModule, FilesModule],
   controllers: [AppController],
   providers: [AppService],
 })
