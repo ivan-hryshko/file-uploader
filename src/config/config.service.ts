@@ -34,6 +34,12 @@ export class ConfigService {
     return this.get('GOOGLE_CLOUD_PROJECT_ID');
   }
 
+  get googleCloudClientEmail(): string {
+    return this.get('GOOGLE_CLOUD_CLIENT_EMAIL');
+  }
+  get googleCloudPrivateKey(): string {
+    return this.get('GOOGLE_CLOUD_PRIVATE_KEY');
+  }
   get googleCloudKeyfilePath(): string {
     return this.get('GOOGLE_CLOUD_KEYFILE_PATH');
   }
